@@ -5,7 +5,13 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
   template: `
     <div>
-      Hello Ultimate Angular!
+      Hello Zac P.
+    </div>
+    <div>
+      Happy New Year.
+    </div>
+    <div>
+      To the ages of ages.
     </div>
   `
 })
