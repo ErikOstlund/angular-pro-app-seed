@@ -21,18 +21,6 @@ import { AuthService, User } from '../../../auth/shared/services/auth/auth.servi
       *ngIf="(user$ | async)?.authenticated">
     </app-nav>
 
-    <div
-        style="text-align: center"
-        *ngIf="(user$ | async)?.authenticated">
-      Zac P! Your in. Welcome.
-    </div>
-
-    <div
-        style="text-align: center"
-        *ngIf="(user$ | async)?.authenticated">
-      *Your
-    </div>
-
     <div class="wrapper">
       <router-outlet></router-outlet>
     </div>
