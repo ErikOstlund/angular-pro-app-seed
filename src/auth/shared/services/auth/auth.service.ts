@@ -14,6 +14,7 @@ export interface User {
 @Injectable()
 export class AuthService {
 
+    // subscribing to the auth state (if user is logged in)
     auth$ = this.af.authState
         .do(next => {
             if (!next) { // if no user or user logged out, we set current user to null
@@ -34,6 +35,10 @@ export class AuthService {
         private store: Store,
         private af: AngularFireAuth
     ) {}
+
+    get user() {
+        return this.af.auth.currentUser;
+    }
 
     get authState() {
         return this.af.authState;
