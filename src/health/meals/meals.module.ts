@@ -8,9 +8,11 @@ import { SharedModule } from '../shared/shared.module';
 
 // containers
 import { MealsComponent } from './containers/meals/meals.component';
+import { MealComponent } from './containers/meal/meal.component';
 
 export const ROUTES: Routes = [
-    { path: '', component: MealsComponent }
+    { path: '', component: MealsComponent },
+    { path: 'new', component: MealComponent }
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ export const ROUTES: Routes = [
         SharedModule // don't need to call forRoot because it was called 1 level up on HealthModule
     ],
     declarations: [
-        MealsComponent
+        MealsComponent,
+        MealComponent
     ]
 })
 export class MealsModule {}
