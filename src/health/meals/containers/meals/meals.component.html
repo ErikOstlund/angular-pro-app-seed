@@ -1,0 +1,38 @@
+<div class="meals">
+    <div class="meals__title">
+        <h1>
+            <img src="/img/food.svg">
+            Your meals
+        </h1>
+        <a
+            class="btn__add"
+            [routerLink]="['../meals/new']">
+            <img src="/img/add-white.svg">
+            New Meal
+        </a>
+    </div>
+
+    <!-- Once meals$ | async as meals is set up, we can use meals anywhere inside this div  -->
+    <div *ngIf="meals$ | async as meals; else loading;">
+        <!-- No meals -->
+        <div class="message" *ngIf="!meals.length">
+            <img src="/img/face.svg">
+            No meals. Add a meal to start.
+        </div>
+
+        <!-- Has meals -->
+        <list-item
+            *ngFor="let meal of meals"
+            [item]="meal">
+
+        </list-item>
+    </div>
+
+    <!-- #loading comes from the 'else loading' -->
+    <ng-template #loading>
+        <div class="message">
+            <img src="/img/loading.svg">
+            Fetching meals...
+        </div>
+    </ng-template>
+</div>
