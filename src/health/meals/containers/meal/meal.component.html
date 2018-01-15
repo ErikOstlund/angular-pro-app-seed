@@ -1,0 +1,19 @@
+<div class="meal">
+    <div class="meal__title">
+        <h1>
+            <img src="/img/food.svg">
+            <span *ngIf="meal$ | async as meal; else title">
+                {{ meal.name ? 'Edit' : 'Create' }} Meal
+            </span>
+
+            <ng-template #title>
+                Loading...
+            </ng-template>
+        </h1>
+    </div>
+    <div>
+        <meal-form
+            (create)="addMeal($event)">
+        </meal-form>
+    </div>
+</div>
