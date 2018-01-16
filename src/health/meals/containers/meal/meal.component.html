@@ -2,6 +2,7 @@
     <div class="meal__title">
         <h1>
             <img src="/img/food.svg">
+            <!-- This essentially turns our meals$ subscription into a meals variable  -->
             <span *ngIf="meal$ | async as meal; else title">
                 {{ meal.name ? 'Edit' : 'Create' }} Meal
             </span>
@@ -11,9 +12,19 @@
             </ng-template>
         </h1>
     </div>
-    <div>
+    <div *ngIf="meal$ | async as meal; else loading;">
         <meal-form
-            (create)="addMeal($event)">
+            [meal]="meal"
+            (create)="addMeal($event)"
+            (update)="updateMeal($event)"
+            (remove)="removeMeal($event)">
         </meal-form>
     </div>
+
+    <ng-template #loading>
+        <div class="message">
+            <img src="/img/loading.svg">
+            Fetching meal...
+        </div>
+    </ng-template>
 </div>

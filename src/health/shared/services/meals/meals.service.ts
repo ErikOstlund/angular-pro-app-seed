@@ -48,6 +48,11 @@ export class MealsService {
         return this.db.list(`meals/${this.uid}`).push(meal);
     }
 
+    updateMeal(key: string, meal: Meal) {
+        // we use db.object because we are dealing with an individual meal
+        return this.db.object(`meals/${this.uid}/${key}`).update(meal);
+    }
+
     removeMeal(key: string) {
         return this.db.list(`meals/${this.uid}`).remove(key);
     }
