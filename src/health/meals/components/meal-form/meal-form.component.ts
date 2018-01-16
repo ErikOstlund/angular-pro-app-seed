@@ -45,7 +45,7 @@ export class MealFormComponent implements OnChanges {
             this.form.patchValue(value);
             //currently patchValue will not auto update form arrays
             // so we have to manually empty and repopulate to ensure correct data
-
+            // benefit of doing this inside the ngOnChanges is if DB updates, this will be called and UI will update!
             if (value.ingredients) {
                 for (const item of value.ingredients) {
                     this.ingredients.push(new FormControl(item));

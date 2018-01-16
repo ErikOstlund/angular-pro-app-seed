@@ -41,7 +41,7 @@ export class MealComponent implements OnInit, OnDestroy {
     }
 
     async updateMeal(event: Meal) {
-        //statically grabbing the meal ID from the URL
+        //snapshot: statically grabbing the meal ID from the URL
         const key = this.route.snapshot.params.id;
         await this.mealsService.updateMeal(key, event);
         this.backToMeals();
