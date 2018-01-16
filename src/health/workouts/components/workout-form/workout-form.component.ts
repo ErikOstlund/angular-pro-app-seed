@@ -29,6 +29,7 @@ export class WorkoutFormComponent implements OnChanges {
 
     form = this.fb.group({
         name: ['', Validators.required],
+        type: 'strength'
     });
 
     constructor(
