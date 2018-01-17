@@ -12,6 +12,10 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { MealsService } from './services/meals/meals.service';
 import { WorkoutsService } from './services/workouts/workouts.service';
 
+// pipes
+import { JoinPipe } from './pipes/join.pipe';
+import { WorkoutPipe } from './pipes/workout.pipe';
+
 @NgModule({
     // register modules here
     imports: [
@@ -19,14 +23,18 @@ import { WorkoutsService } from './services/workouts/workouts.service';
         RouterModule,
         AngularFireDatabaseModule
     ],
-    // register components here
+    // register components/pipes here
     declarations: [
-        ListItemComponent
+        ListItemComponent,
+        JoinPipe,
+        WorkoutPipe
     ],
     // if something needs to be used outside of this module, add it here
     exports: [
         // will be used in meals module and workouts module
-        ListItemComponent
+        ListItemComponent,
+        JoinPipe,
+        WorkoutPipe
     ]
 })
 export class SharedModule {
