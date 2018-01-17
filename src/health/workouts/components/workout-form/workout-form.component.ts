@@ -64,18 +64,6 @@ export class WorkoutFormComponent implements OnChanges {
         );
     }
 
-    // get ingredients() {
-    //     return this.form.get('ingredients') as FormArray;
-    // }
-
-    // addIngredient() {
-    //     this.ingredients.push(new FormControl(''));
-    // }
-
-    // removeIngredients(index: number) {
-    //     this.ingredients.removeAt(index);
-    // }
-
     createWorkout() {
         if(this.form.valid) {
             this.create.emit(this.form.value);
