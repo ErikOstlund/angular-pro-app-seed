@@ -3,4 +3,9 @@
         [selected]="selectedDay"
         (move)="onChange($event)">
     </schedule-controls>
+
+    <schedule-days
+        [selected]="selectedDayIndex"
+        (select)="selectDay($event)">
+    </schedule-days>
 </div>
