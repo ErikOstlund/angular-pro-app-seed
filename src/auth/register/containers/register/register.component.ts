@@ -9,8 +9,7 @@ import { AuthService } from '../../../shared/services/auth/auth.service';
     template: `
         <div>
             <auth-form (submitted)="registerUser($event)">
-                <h1>Zac P! You gotta fucking register.</h1>
-                <h1>*You</h1>
+                <h1>New Account</h1>
                 <a routerLink="/auth/login">Already have an account?</a>
                 <button type="submit">
                     Create account

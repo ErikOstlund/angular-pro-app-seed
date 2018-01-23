@@ -13,13 +13,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
                 <label>
                     <input
                         type="email"
-                        placeholder="You're Email Address"
+                        placeholder="Email Address"
                         formControlName="email">
                 </label>
                 <label>
                     <input
                         type="password"
-                        placeholder="You're Password"
+                        placeholder="Password"
                         formControlName="password">
                 </label>
 
